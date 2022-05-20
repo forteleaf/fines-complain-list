@@ -1,8 +1,8 @@
 {
-    "name": "crawlcrawl",
+    "name": "fines-complain-corperation",
     "version": "1.0.0",
-    "description": "Practice crawling",
-    "main": "naver.js",
+    "description": "",
+    "main": "main.ts",
     "dependencies": {
         "@types/cheerio": "^0.22.31",
         "@types/iconv-lite": "^0.0.1",

@@ -5,7 +5,7 @@ import * as fs from 'fs';
 import * as XLSX from 'xlsx';
 
 let dataSet: Lmt[] = [];
-let endCount: number = 3;
+let endCount: number = 195;
 
 interface Lmt {
     no: string;
@@ -22,6 +22,7 @@ interface Lmt {
 function getData(number: number) {
     let requestUrl = `https://fine.fss.or.kr/main/fin_comp/similar/business_list.jsp?page=${number}`;
     let mapData: Lmt;
+
     return axios({
         url: requestUrl,
         method: 'GET',
@@ -68,11 +69,10 @@ function getData(number: number) {
 
 async function getDatas() {
     for (let i = 1; i <= endCount; i++) {
-        setTimeout(function () {
-            getData(i);
-        }, i * 1000);
+        await getData(i);
     }
     console.log('end');
+    makeExcel(dataSet);
 }
 function addDataset(data: Lmt) {
     dataSet.push(data);
@@ -83,7 +83,6 @@ function addDataset(data: Lmt) {
  * @param data 엑셀 파일
  */
 function makeExcel(data: any[]) {
-    console.log('start make excel');
     let worksheet = XLSX.utils.json_to_sheet(data);
     let workbook = XLSX.utils.book_new();
     let fileName = 'data.xlsx';
@@ -101,5 +100,3 @@ function makeExcel(data: any[]) {
 // });
 
 getDatas();
-
-makeExcel(dataSet);
