@@ -1,0 +1,28 @@
+{
+    "name": "crawlcrawl",
+    "version": "1.0.0",
+    "description": "Practice crawling",
+    "main": "naver.js",
+    "dependencies": {
+        "@types/cheerio": "^0.22.31",
+        "@types/iconv-lite": "^0.0.1",
+        "@types/node": "^17.0.35",
+        "@types/xlsx": "^0.0.36",
+        "axios": "^0.27.2",
+        "cheerio": "^1.0.0-rc.10",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "iconv-lite": "^0.6.3",
+        "prettier": "^2.6.2"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc --build",
+        "clean": "tsc --build --clean"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^8.15.0"
+    }
+}
